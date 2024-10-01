@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-           
+           disks : []
         };
     },
     created() {
@@ -11,6 +11,7 @@ createApp({
             .get('http://localhost/php-dischi-json/backend/api.php')
             .then((res) => {
                 console.log(res.data);
+                this.disks = res.data;
             }
             )
     }
